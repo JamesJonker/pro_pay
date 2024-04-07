@@ -1,0 +1,77 @@
+.centerForm {
+    border: 0px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+  input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+  }
+  button{
+    float: right;
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    background-color: #555;
+    color: white;
+    outline: none;
+  }
+  
+  select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+  }
+  .center {
+    border: 0px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 950px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+
+
+.gridview {
+  font-family: "arial";
+  background-color: grey;
+  width: 100%;
+  font-size: small;
+}
+
+  .gridview th {
+      background: #0CA3D2;
+      padding: 5px;
+      font-size: small;
+  }
+
+  .gridview td {
+      background: #B6E1EE;
+      color: #333333;
+      font: small "arial";
+      padding: 4px;
+  }
+
+  .gridview tr:nth-child(even) td {
+    background: #FFFFFF;
+ }
+ .gridview tr:nth-child(odd) td {
+  background: lightblue;
+}
