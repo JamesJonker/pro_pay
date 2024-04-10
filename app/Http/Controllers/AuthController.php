@@ -10,31 +10,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
+
     public function index()
     {
         return view('login.login');
     }  
       
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function registration()
     {
         return view('registration.registration');
     }
       
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function postLogin(Request $request)
     {
         $request->validate([
@@ -51,11 +37,6 @@ class AuthController extends Controller
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
       
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function postRegistration(Request $request)
     {  
         $request->validate([
@@ -70,11 +51,6 @@ class AuthController extends Controller
         return redirect("people")->withSuccess('Great! You have Successfully loggedin');
     }
     
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function dashboard()
     {
         if(Auth::check()){
@@ -84,11 +60,6 @@ class AuthController extends Controller
         return redirect("login.login")->withSuccess('Opps! You do not have access');
     }
     
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function create(array $data)
     {
       return User::create([
@@ -98,11 +69,6 @@ class AuthController extends Controller
       ]);
     }
     
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function logout() {
         Session::flush();
         Auth::logout();
