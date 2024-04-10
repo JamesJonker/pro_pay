@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 .centerForm {
     border: 0px solid;
     position: absolute;
@@ -6,7 +7,8 @@
     width: 650px;
     height: 700px;
     transform: translate(-50%, -50%);
-    padding: 10px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   input{
@@ -17,6 +19,7 @@
     border: 1px solid #555;
     outline: none;
   }
+
   button{
     float: right;
     width: 20%;
@@ -74,4 +77,46 @@
  }
  .gridview tr:nth-child(odd) td {
   background: lightblue;
+}
+
+body{
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #212529;
+  text-align: left;
+  background-color: #f5f8fa;
+}
+.navbar-laravel
+{
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+  font-family: Raleway, sans-serif;
+}
+.my-form
+{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.my-form .row
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+.login-form
+{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.login-form .row
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+.dropdown-toggle{
+  height: 40px;
+  width: 100% !important;
 }

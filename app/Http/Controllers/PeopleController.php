@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Email;
 
 class PeopleController extends Controller
 {
@@ -34,17 +37,48 @@ class PeopleController extends Controller
         ]);
 
         //dd($request);
-        $newPerson = People::create($data);
+        $data['interests'] = implode(',', $request->interests);
+        if($newPerson = People::create($data)){
+            Mail::to($data['email'])->send(new Email($data));
+        };
         return redirect(route('people.index'));
-        
+
     }
 
     public function edit(People $person){
-        //dd($person->name);
+        
+        $list = ['Hunting','Fishing','Tracking','Cooking','Cars','Other'];
+
+        $listItem = [
+            ['name'=>'hunting', 'sel'=>'' ],
+            ['name'=>'fishing', 'sel'=>'' ],
+            ['name'=>'tracking', 'sel'=>'' ],
+            ['name'=>'cooking', 'sel'=>'' ],
+            ['name'=>'cars', 'sel'=>'' ],
+            ['name'=>'other', 'sel'=>'' ],
+            
+        ];
+
+
+       //dd($listItem);
+       $person['interests'] = explode(',', $person->interests);
+
+        foreach($listItem as $lkey=>$lItem){
+            
+            foreach($person['interests'] as $interest){
+                if($lItem['name']== $interest){
+                    $listItem[$lkey]['sel'] = 'selected';
+                    
+                }
+            }
+        }
+        $person['list'] = $listItem;
+        
         return view('people.edit', ['person'=> $person]);
     }
 
-    public function update(People $person, Request $request){
+    public function update(People $person, Request $request){   
+        
         $data= $request->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -57,6 +91,7 @@ class PeopleController extends Controller
 
         ]);
 
+        $data['interests'] = implode(',', $request->interests);
         $person->update($data);
         return redirect(route('people.index'))->with('success', 'Person information has been updated');
     }
