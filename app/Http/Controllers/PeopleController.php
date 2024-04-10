@@ -59,8 +59,21 @@ class PeopleController extends Controller
             
         ];
 
-
-       //dd($listItem);
+        $langList = [
+            ['lang'=>'english', 'select'=>''],
+            ['lang'=>'afrikaans', 'select'=>''],
+            ['lang'=>'xhosa', 'select'=>''],
+            ['lang'=>'venda', 'select'=>''],
+            ['lang'=>'zulu', 'select'=>''],
+            ['lang'=>'other', 'select'=>''],
+        ];
+        foreach($langList as $langkey=> $langitem){
+            if($langitem['lang'] == $person['language']){
+                $langList[$langkey]['select'] = 'selected';
+            }
+        }
+        $person['langList'] = $langList;
+        //dd($person);
        $person['interests'] = explode(',', $person->interests);
 
         foreach($listItem as $lkey=>$lItem){
@@ -73,7 +86,7 @@ class PeopleController extends Controller
             }
         }
         $person['list'] = $listItem;
-        
+        //dd($person);
         return view('people.edit', ['person'=> $person]);
     }
 

@@ -82,12 +82,12 @@
                             <div>
                                 <label for="language">Language</label>  
                                 <select id="language" name="language">
-                                    <option value="English">English</option>
-                                        <option value="Afrikaans">Afrikaans</option>
-                                        <option value="Xhosa">Xhosa</option>
-                                        <option value="Venda">Venda</option>
-                                        <option value="Zulu">Zulu</option>
-                                        <option value="Other">Other</option>
+                                    <option value="english">English</option>
+                                        <option value="afrikaans">Afrikaans</option>
+                                        <option value="xhosa">Xhosa</option>
+                                        <option value="venda">Venda</option>
+                                        <option value="zulu">Zulu</option>
+                                        <option value="other">Other</option>
                                 </select>
                                 @error('language')
                                         <span class="text-dange" role="alert">
@@ -99,12 +99,12 @@
  
                             <label for="interests">Select Interests</label><br>
                                 <select class="selectpicker" id="interests" multiple data-live-search="true" name="interests[]">
-                                    <option value="Hunting">Hunting</option>
-                                    <option value="Fishing">Fishing</option>
-                                    <option value="Tracking">Tracking</option>
-                                    <option value="Cooking">Cooking</option>
-                                    <option value="Cars">Cars</option>
-                                    <option value="Other">Other</option>
+                                    <option value="hunting">Hunting</option>
+                                    <option value="fishing">Fishing</option>
+                                    <option value="tracking">Tracking</option>
+                                    <option value="cooking">Cooking</option>
+                                    <option value="cars">Cars</option>
+                                    <option value="other">Other</option>
                                 </select>
                                 @error('interests')
                                         <span class="text-dange" role="alert">

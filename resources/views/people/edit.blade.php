@@ -82,13 +82,14 @@
                             </div>
                             <div>
                             <label for="language">Language</label>
-                            <select id="language" name="language">
-                                  <option value="English">English</option>
-                                  <option value="Afrikaans">Afrikaans</option>
-                                  <option value="Xhosa">Xhosa</option>
-                                  <option value="Venda">Venda</option>
-                                  <option value="Zulu">Zulu</option>
-                                  <option value="Other">Other</option>
+                            <select id="language" name="language" value="{{$person->language}}">
+                            @foreach($person['langList'] as $langitem)
+                                        <option value="{{$langitem['lang']}}"
+                                        @if ($langitem['select'] == "selected")
+                                            selected
+                                        @endif>{{$langitem['lang']}}
+                                 </option>
+                                @endforeach
                             </select>
                             @error('language')
                                 <span class="text-dange" role="alert">

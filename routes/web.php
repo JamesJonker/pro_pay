@@ -1,6 +1,4 @@
 <?php
-
-use App\Http\Controllers\UserinfoController;
 use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
